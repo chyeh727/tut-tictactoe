@@ -1,30 +1,30 @@
 $(function() {
     "use strict";
     var cells = $('.cell');
-    var symbols = ['&#10799;', '&#9675;'];
+    var symbols = ['&times;', '&#9675;'];
     var currentStep = 0,
         currentState = {};
     var gameOver = true;
     var winningCombos = {
-        0: [0, 1, 2],
-        1: [3, 4, 5],
-        2: [6, 7, 8],
-        3: [0, 3, 6],
-        4: [1, 4, 7],
-        5: [2, 5, 8],
-        6: [0, 4, 8],
-        7: [2, 4, 6]
+        combo0: [0, 1, 2],
+        combo1: [3, 4, 5],
+        combo2: [6, 7, 8],
+        combo3: [0, 3, 6],
+        combo4: [1, 4, 7],
+        combo5: [2, 5, 8],
+        combo6: [0, 4, 8],
+        combo7: [2, 4, 6]
     };
     var potentialCombos = {
-        0: [0, 3, 6],
-        1: [0, 4],
-        2: [0, 5, 7],
-        3: [1, 3],
-        4: [1, 4, 6, 7],
-        5: [1, 5],
-        6: [2, 3, 7],
-        7: [2, 4],
-        8: [2, 5, 6],
+        0: ['combo0', 'combo3', 'combo6'],
+        1: ['combo0', 'combo4'],
+        2: ['combo0', 'combo5', 'combo7'],
+        3: ['combo1', 'combo3'],
+        4: ['combo1', 'combo4', 'combo6', 'combo7'],
+        5: ['combo1', 'combo5'],
+        6: ['combo2', 'combo3', 'combo7'],
+        7: ['combo2', 'combo4'],
+        8: ['combo2', 'combo5', 'combo6'],
     };
 
     var showArrow = function(p) {
@@ -40,7 +40,7 @@ $(function() {
     var initGame = function() {
         if (gameOver) {
             cells.empty();
-            for (var i = 0; i < 9; i ++) {
+            for (var i = 0; i < 9; i++) {
                 currentState[i] = null;
             }
             currentStep = 0;

@@ -3,9 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="style.css" />
-        <script src="jquery-1.11.3.min.js"></script>
-        <script src="game.js"></script>
+        <link rel="stylesheet" href="style.css">
+
+        <!-- Test Driven -->
+        <link rel="stylesheet" href="lib/jasmine-2.3.4/jasmine.css">
+
     </head>
     <body>
         <div class="board">
@@ -30,8 +32,17 @@
                 <div class="arrow arrow-l"></div>
             </div>
             <div class="ss">
-                按任意鍵開始新遊戲。
+                Press any key to start new game.
             </div>
         </div>
+        <script src="jquery-1.11.3.min.js"></script>
+        <script src="game.js"></script>
+
+        <!-- Test Driven -->
+        <script src="lib/jasmine-2.3.4/jasmine.js"></script>
+        <script src="lib/jasmine-2.3.4/jasmine-html.js"></script>
+        <script src="lib/jasmine-2.3.4/boot.js"></script>
+        <script src="gamespec.js"></script>
+
     </body>
 </html>
